@@ -5,6 +5,7 @@ import com.dharn.registerservice.entity.User;
 import com.dharn.registerservice.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,9 +27,9 @@ public class RegisterController {
 
     }
 
-    @GetMapping("/login")
-    public List<User> getAllUser() {
-        List<User> users = registerService.getUsers();
+    @GetMapping("/login/{email}")
+    public User getAllUser(@PathVariable String email) {
+        User users = registerService.getUsers(email);
         return users;
     }
 }
