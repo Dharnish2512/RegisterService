@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -21,15 +20,15 @@ public class RegisterController {
     private RegisterService registerService;
 
     @PostMapping("/add")
-    public User getUserDetials(@RequestBody final User user) {
+    public User getUserDetails(@RequestBody final User user) {
         registerService.addUser(user);
         return user;
 
     }
 
     @GetMapping("/login/{email}")
-    public User getAllUser(@PathVariable String email) {
-        User users = registerService.getUsers(email);
+    public User getAllUser(@PathVariable final String email) {
+        final User users = registerService.getUsers(email);
         return users;
     }
 }
