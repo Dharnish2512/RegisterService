@@ -3,9 +3,14 @@ package com.dharn.registerservice.entity;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -20,7 +25,10 @@ public class User {
     private String email;
     private String password;
     private double phoneNo;
-    //  Date dateOfBirth;
+//    Date dateOfBirth;
     private String address;
+    /*@OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "User_Id", referencedColumnName = "userId")
+    private List<DateModel> dateList = new ArrayList<>();*/
 
 }
