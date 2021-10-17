@@ -25,7 +25,7 @@ class RegisterServiceImplTest {
         user.setEmail("gokul@gmail.com");
         user.setPassword("Gokul@123");
         user.setPhoneNo(1234567890);
-        user.setAddress("asdfgh");
+        user.setDoorNo_StreetName("asdfgh");
         loginModel.setEmail("kavin@gmail.com");
         loginModel.setPassword("Kavin@123");
     }

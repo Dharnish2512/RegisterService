@@ -25,8 +25,13 @@ public class User {
     private String email;
     private String password;
     private double phoneNo;
-//    Date dateOfBirth;
-    private String address;
+    //    Date dateOfBirth;
+    private String doorNo_StreetName;
+    private String district;
+    private String state;
+    private int pincode;
+    private String country;
+
     /*@OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "User_Id", referencedColumnName = "userId")
     private List<DateModel> dateList = new ArrayList<>();*/
