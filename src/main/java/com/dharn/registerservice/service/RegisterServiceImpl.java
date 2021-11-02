@@ -4,7 +4,11 @@ package com.dharn.registerservice.service;
 import com.dharn.registerservice.entity.User;
 import com.dharn.registerservice.repository.UserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.sql.Date;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 
 
@@ -18,6 +22,7 @@ public class RegisterServiceImpl implements RegisterService {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {RuntimeException.class, SQLException.class})
     public User addUser(final User user) {
         user.setLastLogin(GetDate());
         user.setTime(GetTime());
